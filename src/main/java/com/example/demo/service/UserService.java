@@ -13,4 +13,9 @@ public class UserService {
     public User getUserById(Integer userId){
         return userMapper.selectByPrimaryKey(userId);
     }
+
+    public String insertUser(User user){
+        userMapper.insert(user);
+        return "success";
+    }
 }

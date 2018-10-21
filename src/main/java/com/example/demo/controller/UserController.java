@@ -16,6 +16,6 @@ public class UserController {
     @GetMapping
     @RequestMapping("/getUser")
     public User getUserById(){
-        return userService.getUserById(1000);
+        return userService.getUserById(1000);    
     }
 }
