@@ -13,14 +13,12 @@ public class RedisController {
     @Autowired
     RedisSerivice redisSerivice;
 
-    @PutMapping
-    @RequestMapping("/redisSet")
+    @PutMapping("/redisSet")
     public String setList(){
         return redisSerivice.setList("Hello World");
     }
 
-    @GetMapping
-    @RequestMapping("/redisGet")
+    @GetMapping("/redisGet")
     public String getList(){
         return redisSerivice.getList();
     }

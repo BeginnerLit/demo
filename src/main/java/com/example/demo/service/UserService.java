@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public User getUserById(Integer userId){
+    public User getUserById(int userId){
         return userMapper.selectByPrimaryKey(userId);
     }
 

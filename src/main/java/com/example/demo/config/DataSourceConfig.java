@@ -20,26 +20,12 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
     private static Logger logger=LoggerFactory.getLogger(DataSourceConfig.class);
 
-/*    @Bean("bootdb")
-    @ConfigurationProperties(prefix = "spring.datasource.bootdb")
-    public DataSource bootdbDatasource{
-        DataSource dataSource= DataSourceBuilder.create().build();
-        return dataSource;
-    }*/
-
      @Bean(name = "bootdb")
      @ConfigurationProperties(prefix = "spring.datasource.bootdb")
      public DataSource bootdbDataSource() {
          return DataSourceBuilder.create().build();
      }
 
- /*   @Bean("bootdbSqlSessionFactory")
-    public SqlSessionFactory bootdbSqlSessionFactory(@Qualifier("bootdb") DataSource dataSource){
-        SqlSessionFactoryBean bean=new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver.getResource("classpath:mapper/base/*.xml"));
-        return  bean.getObject();
-    }*/
     @Bean("bootdbSqlSessionFactory")
     public SqlSessionFactory bootdbSqlSessionFactory(@Qualifier("bootdb") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
